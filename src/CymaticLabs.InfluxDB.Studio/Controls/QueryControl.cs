@@ -109,9 +109,6 @@ namespace CymaticLabs.InfluxDB.Studio.Controls
 
                     // Render the results and increment the global total
                     resultsCount += queryResultsControl.UpdateResults(result);
-                    
-                    // Resize columns after control loaded
-                    //queryResultsControl.ColumnsAutoSize();
                 }
             }
 
