@@ -62,6 +62,7 @@
             // queryEditor
             // 
             this.queryEditor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.queryEditor.ScrollWidth = 1;
             this.queryEditor.Lexer = ScintillaNET.Lexer.Sql;
             this.queryEditor.Location = new System.Drawing.Point(0, 0);
             this.queryEditor.Name = "queryEditor";
