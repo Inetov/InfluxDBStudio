@@ -52,6 +52,8 @@ namespace CymaticLabs.InfluxDB.Studio.Controls
             queryEditor.Styles[Style.Sql.String].ForeColor = Color.Red;
             queryEditor.Styles[Style.Sql.Number].ForeColor = Color.Magenta;
             queryEditor.Styles[Style.Sql.QuotedIdentifier].ForeColor = Color.Red;
+            queryEditor.Styles[Style.Default].Font = "Courier New";
+            queryEditor.Styles[Style.Default].Size += 3;
         }
 
         #endregion Constructors
@@ -107,6 +109,9 @@ namespace CymaticLabs.InfluxDB.Studio.Controls
 
                     // Render the results and increment the global total
                     resultsCount += queryResultsControl.UpdateResults(result);
+                    
+                    // Resize columns after control loaded
+                    //queryResultsControl.ColumnsAutoSize();
                 }
             }
 

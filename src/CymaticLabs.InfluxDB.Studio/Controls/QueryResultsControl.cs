@@ -79,6 +79,15 @@ namespace CymaticLabs.InfluxDB.Studio.Controls
         #region Methods
 
         /// <summary>
+        /// Changes size of columns for content
+        /// </summary>
+        public void ColumnsAutoSize()
+        {
+            listView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            listView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
+
+        /// <summary>
         /// Clears the current query results from the UI.
         /// </summary>
         public void ClearResults()
@@ -165,13 +174,14 @@ namespace CymaticLabs.InfluxDB.Studio.Controls
                 }
             }
 
-            // Resize each column
-            if (listView.Columns.Count > 0)
-            {
-                var columnWidth = (Width - 12) / listView.Columns.Count;
-                if (columnWidth < 96) columnWidth = 96;
-                foreach (ColumnHeader col in listView.Columns) col.Width = columnWidth;
-            }
+            // Resize each column (replaced with ColumnsAutoSize() method)
+            //if (listView.Columns.Count > 0)
+            //{
+            //    var columnWidth = (Width - 12) / listView.Columns.Count;
+            //    if (columnWidth < 96) columnWidth = 96;
+            //    foreach (ColumnHeader col in listView.Columns) col.Width = columnWidth;
+            //}
+            ColumnsAutoSize();
 
             listView.EndUpdate();
 
@@ -303,5 +313,6 @@ namespace CymaticLabs.InfluxDB.Studio.Controls
         }
 
         #endregion Methods
+
     }
 }

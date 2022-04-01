@@ -630,6 +630,7 @@
             // connectionsTreeView
             // 
             this.connectionsTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.connectionsTreeView.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.connectionsTreeView.FullRowSelect = true;
             this.connectionsTreeView.HideSelection = false;
             this.connectionsTreeView.ImageIndex = 0;

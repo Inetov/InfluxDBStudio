@@ -142,6 +142,8 @@ namespace CymaticLabs.InfluxDB.Studio
             // Set initial tool strip state
             UpdateUIState();
 
+            SetMainWindowSize();
+
             // Wait a little bit for the main form to load and then show the connections dialog
             await Task.Delay(250);
             await ShowConnectionsDialog();
@@ -1598,6 +1600,18 @@ namespace CymaticLabs.InfluxDB.Studio
         #endregion Settings
 
         #region User Interface
+
+        
+        /// <summary>
+        /// Set size for main window
+        /// </summary>
+        void SetMainWindowSize()
+        {
+            var workingArea = Screen.GetBounds(Location);
+            Width = (int)(workingArea.Width * 0.8);
+            Left = (workingArea.Width - Width) / 2;
+        }
+
 
         // Updates the state of the tool strip to match the current user interaction
         void UpdateUIState()
